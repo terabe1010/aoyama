@@ -1,0 +1,16 @@
+nav li.has-child::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #00807F;
+  border-right: 2px solid #00807F;
+  position: absolute;
+  top: 8px;
+  left: -11px;
+  transform: rotate(45deg);
+  transition: ease 0.3s;
+  border-radius: 1px;
+}
+nav li.has-child:hover::before {
+  transform: rotate(180deg);
+}

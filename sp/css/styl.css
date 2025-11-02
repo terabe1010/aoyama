@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.box {
+  margin-top: 100px;
+}
+.text {
+  text-align: center;
+  line-height: 40px;
+}

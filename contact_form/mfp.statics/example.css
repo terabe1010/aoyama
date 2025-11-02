@@ -1,0 +1,414 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Zen Maru Gothic', sans-serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #fff;
+	font-size: 1rem;
+}
+#form-top {
+	margin-top: 80px;
+	/* margin-bottom: 50px; */
+	/* background-color: #CCEDF6; */
+}
+#form-top .contact-wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 40px 50px 40px;
+}
+#form-top .form-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#form-top .form-title .img {
+	width: 60px;
+	margin-right: 15px;
+}
+#form-top .form-title .title {
+	font-size: 2rem;
+	color: #00807F;
+	font-weight: normal;
+}
+#caution {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+#caution .box {
+	border: 1px solid #00807F;
+	border-radius: 10px;
+	padding: 20px 20px;
+}
+#caution .text {
+	font-size: 1rem;
+	margin-bottom: 10px;
+	line-height: 30px;
+}
+#caution .text span {
+	color: #DC3545;
+	font-weight: bold;
+}
+#count {
+	display: flex;
+	justify-content: center;
+	max-width: 800px;
+	margin: 0 auto;
+	margin-top: 90px;
+}
+#count .stage {
+	margin-right: 100px;
+	text-align: center;
+	position: relative;
+}
+#count .stage.bar::after {
+	content: "";
+	width: 110px;
+	height: 10px;
+	z-index: -10;
+	border-top: 10px solid #707070;
+	position: absolute;
+	top: 36px;
+	left: 78px;
+}
+#count .stage:last-child {
+	margin-right: 0;
+}
+#count .stage .number {
+	font-size: 4.5rem;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	line-height: 70px;
+	margin-bottom: 20px;
+}
+#count .stage .number.number-1 {
+	line-height: 75px;
+	background-color: #00807F;
+	color: #fff;
+}
+#count .stage .number.number-2 {
+	background-color: #fff;
+	border: 3px solid #707070;
+	color: #707070;
+}
+#count .text.blue {
+	color: #00A3D2;
+}
+#mailformpro .text {
+	font-size: 0.8rem;
+	padding: 0 0 7px 10px;
+	color: #DC3545;
+	font-weight: bold;
+}
+div#contact-wrapper {
+	padding: 0 50px;
+	width: 900px;
+	max-width: 100%;
+	text-align: left;
+	margin: 30px auto 30px;
+}
+div#contact-wrapper div#contact-header h1 {
+	font-size: 30px;
+	padding: 0.6em 0 0.4em 1.5em;
+	margin: 0;
+	line-height: 1em;
+	background: url(_images/logo-touch-icon.png) no-repeat left center;
+	background-size: 1.5em 1.5em;
+	text-shadow: 0 2px 0 #FFF;
+}
+div#contact-wrapper div#contact-header p {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+div#contact-wrapper div#contact-footer {
+	text-align: center;
+}
+div#contact-wrapper div#contact-footer p {
+	font-size: 12px;
+	color: #666;
+}
+div#contact-wrapper table {
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+div#contact-wrapper table tr th,div#contact-wrapper table tr td {
+	background: #FFF;
+	font-size: 12px;
+	padding: 5px 10px;
+	border: solid 1px #CCC;
+}
+div#contact-wrapper div#container {
+	margin: 0px auto 80px;
+	border: solid 1px #00807F;
+	background: #FFF;
+	padding: 20px;
+	border-radius: 10px;
+}
+div#contact-wrapper div#container form#mailformpro dl dt {
+	float: none;
+	width: auto;
+	clear: both;
+	font-size: 18px;
+	padding: 20px 0 0 10px;
+	text-align: left;
+	border-top: solid 1px #CCC;
+	margin: 0px;
+}
+div#contact-wrapper div#container form#mailformpro dl dt,
+div#contact-wrapper div#container form#mailformpro dl dt span {
+	vertical-align: middle;
+	line-height: 1em;
+}
+div#contact-wrapper div#container form#mailformpro dl dt span {
+	margin-top: -0.3em;
+}
+div#contact-wrapper div#container form#mailformpro dl dd {
+	border: none;
+	margin: 0px;
+	padding: 15px 20px;
+	font-size: 16px;
+	line-height: 1.5em;
+	text-align: left;
+}
+.mfp_rows {
+	clear: both;
+}
+.mfp_rows:after {
+	content: "";
+	clear: both;
+	height: 0;
+	display: block;
+	visibility: hidden;
+}
+.mfp_rows input[type="text"],
+.mfp_rows input[type="email"],
+.mfp_rows input[type="tel"],
+.mfp_rows input[type="number"],
+.mfp_rows input[type="date"],
+.mfp_rows input[type="file"],
+.mfp_rows select,
+.mfp_rows button,
+form#mailformpro .mfp_rows label {
+	width: 100%;
+	min-width: 100%;
+	word-break: break-all;
+	white-space: normal;
+}
+.mfp_rows textarea {
+	width: 100%;
+	min-width: 100%;
+}
+.mfp_rows .mfp_col1,.mfp_rows .mfp_col2,.mfp_rows .mfp_col3,.mfp_rows .mfp_col4,.mfp_rows .mfp_col5,.mfp_rows .mfp_col6,.mfp_rows .mfp_col7,.mfp_rows .mfp_col8,.mfp_rows .mfp_col9,.mfp_rows .mfp_col10 {
+	float: left;
+	padding: 0 1.5%;
+}
+.mfp_rows .mfp_col1 {width: 10%;}
+.mfp_rows .mfp_col2 {width: 20%;}
+.mfp_rows .mfp_col3 {width: 30%;}
+.mfp_rows .mfp_col4 {width: 40%;}
+.mfp_rows .mfp_col5 {width: 50%;}
+.mfp_rows .mfp_col6 {width: 60%;}
+.mfp_rows .mfp_col7 {width: 70%;}
+.mfp_rows .mfp_col8 {width: 80%;}
+.mfp_rows .mfp_col9 {width: 90%;}
+.mfp_rows .mfp_col10 {width: 100%;}
+div#example_selector {
+}
+div#example_selector span {
+	font-size: 10px;
+	color: #666;
+}
+div#example_selector select {
+	display: block;
+	width: 100%;
+}
+div#contact-wrapper div#container div.mfp_thanks {
+	padding: 0px;
+}
+div#contact-wrapper div#container div.mfp_thanks p {
+	line-height: 30px;
+	margin-bottom: 10px;
+	font-size: 1rem;
+}
+div#contact-wrapper div#container div.mfp_thanks ul.mfp_caution {
+	list-style-type: disc;
+	margin-bottom: 20px;
+}
+div#contact-wrapper div#container div.mfp_thanks ul.mfp_caution li {
+	font-size: 1.1rem;
+	margin: 0 1.5rem;
+	font-weight: bolder;
+	color: #DC3545;
+}
+ul.example_pages {
+	border: solid 1px #CCC;
+	padding: 15px 30px;
+}
+ul.example_pages li {
+	padding: 5px 0px;
+}
+div#example_selector {
+	padding: 10px 0px;
+	text-align: left;
+}
+div#example_selector span {
+	display: block;
+	font-size: 14px;
+	padding: 5px 0px;
+}
+div#example_selector select {
+	font-size: 18px;
+	border-radius: 3px;
+	border: solid 1px #CCC;
+	padding: 5px 10px;
+	box-shadow: 0px 0px 5px #CCC inset;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	outline: none;
+}
+div.tips {
+	margin: 10px auto;
+	padding: 5px 20px;
+	border: solid 1px #CCC;
+	border-radius: 5px;
+	box-shadow: 0px 2px 10px #CCC;
+	background: #FEE;
+}
+div.tips p {
+	font-size: 14px;
+	line-height: 2em;
+}
+div.tips strong {
+	color: #800040;
+}
+div.tips span {
+	display: block;
+	padding: 5px 10px;
+	color: #008080;
+}
+div.tips em {
+	font-style: normal;
+	color: #090;
+	font-weight: bold;
+}
+div.tips ol li {
+	padding: 10px;
+	margin: 15px;
+	font-size: 12px;
+	line-height: 1.7em;
+	border: solid 1px #CCC;
+	border-radius: 5px;
+	background: #FFF;
+}
+div.tips ol li span {
+	padding: 0px 10px;
+}
+div.tips ol li img {
+	display: block;
+	width: 280px;
+	border: none;
+	margin: 5px auto;
+}
+.sp-br {
+	display: none;
+}
+
+/* ------------------------------
+sp
+------------------------------ */
+@media screen and (max-width: 800px) {
+	* {
+		word-break: break-all;
+		white-space: normal;
+	}
+	body {
+		padding: 0px;
+		margin: 0px;
+	}
+	#form-top {
+		margin-top: 60px;
+		margin-bottom: 30px;
+	}
+	#form-top .contact-wrapper {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 20px 50px 20px;
+	}
+	#form-top .form-title .img {
+		width: 30px;
+		margin-right: 5px;
+	}
+	#form-top .form-title .title {
+		font-size: 1.3rem;
+	}
+	#caution {
+		padding: 0 20px;
+	}
+	#caution .text {
+		font-size: 0.9rem;
+		line-height: 25px;
+	}	
+	#caution .box {
+		padding: 20px 10px;
+	}
+	#count {
+		margin-top: 50px;
+	}
+	#count .stage {
+		margin-right: 60px;
+	}
+	#count .stage.bar::after {
+		border-top: 8px solid #707070;
+		top: 27px;
+		left: 47px;
+	}
+	#count .stage .number {
+		font-size: 2.5rem;
+		width: 60px;
+		height: 60px;
+		line-height: 55px;
+		margin-bottom: 20px;
+	}
+	#count .stage .number.number-1 {
+		line-height: 60px;
+	}
+	div#contact-wrapper {
+		border-radius: 0px;
+		padding: 20px;
+		margin: 0px;
+		width: 100%;
+		box-shadow: none;
+		border: none;
+	}
+	div#contact-wrapper div#container {
+		padding: 20px 5px;
+	}
+	div#contact-wrapper div#contact-header h1 {
+		font-size: 24px;
+	}
+	div#contact-wrapper div#container form#mailformpro dl dt {
+		padding: 10px 0 5px 5px;
+		font-size: 0.9rem;
+	}
+	div#contact-wrapper div#container form#mailformpro dl dd {
+		font-size: 0.9rem;
+		padding: 15px 5px;
+	}
+	div#contact-wrapper div#container div.mfp_thanks p {
+		line-height: 25px;
+		font-size: 0.9rem;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.sp-br {
+		display: block;
+	}
+}

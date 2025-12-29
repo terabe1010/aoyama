@@ -136,9 +136,53 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-  /*=================================================
-  header,footer共通化
-  ===================================================*/
+/*=================================================
+価格の切り替え
+===================================================*/
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const select  = document.querySelector('.season-select');
+  const current = document.querySelector('.season-current');
+  const options = document.querySelectorAll('.season-options button');
+  const prices  = document.querySelectorAll('.price');
+
+  /* 開閉 */
+  current.addEventListener('click', (e) => {
+    e.stopPropagation();
+    select.classList.toggle('open');
+  });
+
+  /* 選択 */
+  options.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      const season = btn.dataset.season;
+
+      // 表示切替
+      current.querySelector('.label').textContent = btn.textContent;
+      current.className = `season-current ${season} active`;
+
+      // 価格切替
+      prices.forEach(cell => {
+        const value = cell.dataset[season];
+        if (!value) return;
+        cell.textContent = Number(value).toLocaleString() + '円';
+      });
+
+      // 閉じる（アニメーション付き）
+      select.classList.remove('open');
+    });
+  });
+
+  /* 外側クリックで閉じる */
+  document.addEventListener('click', () => {
+    select.classList.remove('open');
+  });
+
+});
+
 
 
 

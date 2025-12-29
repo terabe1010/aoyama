@@ -1337,30 +1337,33 @@ price-page
 #price-page .text {
   font-size: 1.3rem;
   line-height: 40px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 #price-page .text.checkout {
   color: red;
   font-weight: 700;
   text-decoration: underline;
 }
-
-
+#price-page .select-flex {
+  display: flex;
+  align-items: center;
+  gap: 0 1%;
+  margin-bottom: 25px;
+}
+#price-page .pc-none {
+  display: none;
+}
 #price-page .switch-title {
-  font-style: 1.3rem;
+  font-size: 1.3rem;
   font-weight: normal;
   margin-bottom: 10px;
   padding-left: 5px;
 }
-
 #price-page .season-select {
   position: relative;
   display: inline-block;
   font-size: 1.3rem;
-  margin-bottom: 5px;
 }
-
-/* 現在選択中 */
 #price-page .season-current {
   display: flex;
   align-items: center;
@@ -1371,19 +1374,13 @@ price-page
   cursor: pointer;
   min-width: 140px;
 }
-
-/* ▼アイコン */
 #price-page .season-current .arrow {
   font-size: 0.8em;
   transition: transform 0.2s ease;
 }
-
-/* 開いたら回転 */
 #price-page .season-select.open .season-current .arrow {
   transform: rotate(180deg);
 }
-
-/* 選択肢（初期状態） */
 #price-page .season-options {
   position: absolute;
   top: 100%;
@@ -1392,8 +1389,6 @@ price-page
   background: #fff;
   width: 100%;
   z-index: 10;
-
-  /* アニメーション用 */
   opacity: 0;
   transform: translateY(-6px);
   pointer-events: none;
@@ -1405,27 +1400,18 @@ price-page
   padding: 6px 10px;
   transition: background 0.5s ease, filter 0.2s ease;
 }
-
-/* 開いた状態 */
 #price-page .season-select.open .season-options {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
-/* 選択肢 hover 共通 */
-
 #price-page .season-options li button:hover {
   filter: brightness(0.9);
 }
-
-/* ===== 色指定（既存流用）===== */
 #price-page .top { background:#e60012; color:#fff; }
 #price-page .high { background:#f39800; }
 #price-page .regular { background:#fff; }
 #price-page .value { background:#6bb6b6; }
-
-
-
 #price-page .table .scroll {
   display: none;
 }
@@ -1501,7 +1487,7 @@ price-page
   width: 6%;
 }
 #price-page .table .info-table-2 th.width-9 {
-  width: 15%;
+  width: 10%;
 }
 #price-page .table .info-table td.price-right {
   text-align: right;
@@ -1557,7 +1543,6 @@ price-page
   border-right: 1px solid #fff;
   right: 16px;
 }
-
 #price-page .table-title {
   font-size: 1.3rem;
   font-weight: normal;
@@ -1567,14 +1552,16 @@ price-page
 #price-page .table-title .type {
   width: 15%;
 }
-
-
+#season-calendar {
+  scroll-margin-top: 100px;
+}
 #price-page .season-calendar {
   margin: 60px 0;
 }
 #price-page .season-calendar .section-title {
   text-align: center;
   margin-bottom: 20px;
+  font-weight: normal;
 }
 #price-page .season-legend {
   display: flex;
@@ -1583,8 +1570,6 @@ price-page
   margin-bottom: 30px;
   font-size: 0.9rem;
 }
-
-
 #price-page .season-legend span {
   display: inline-block;
   width: 14px;
@@ -1593,68 +1578,70 @@ price-page
   border: 1px solid #000; /* 黒枠 */
   box-sizing: border-box;
 }
-
 #price-page .calendar-flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1% 2%;
 }
-
 #price-page .month-block {
   margin-bottom: 40px;
   width: 23%;
 }
-
-
 #price-page .month-block h3 {
   margin-bottom: 10px;
   color: #00807F;
 }
-
-
 #price-page .season-calendar-month {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
   margin: 20px 0;
 }
-
-
 #price-page .season-calendar-month th,
 #price-page .season-calendar-month td {
   border: 1px solid #ddd;
   padding: 6px;
   font-size: 0.85rem;
 }
-
-
 #price-page .top {
   background: #e60012;
   color: #fff;
   font-weight: bold;
 }
-
 #price-page .high {
   background: #f39800;
   color: #000;
 }
-
 #price-page .regular {
   background: #fff;
   color: #000;
 }
-
 #price-page .value {
   background: #6bb6b6;
   color: #000;
 }
-
-
 #price-page .season-note {
   text-align: center;
   font-size: 0.85rem;
   margin-top: 20px;
+}
+#price-page .season-calendar td.closed {
+  position: relative;
+}
+#price-page .season-calendar td.closed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.25) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  pointer-events: none;
 }
 
 /*-------------------------------------------
@@ -2921,7 +2908,13 @@ TB
   #price-page #price-img {
     background-position: right;
   }
-
+  #price-page .table .info-table-2 table{
+    width: 100%;
+  }
+  #price-page .month-block {
+      margin-bottom: 40px;
+      width: 48%;
+  }
   /*-------------------------------------------
   [TB]facility-page
   -------------------------------------------*/
@@ -3574,10 +3567,54 @@ SP
     top: 6px;
     left: 6px;
   }
+  #price-page .switch-title {
+    font-size: 1rem;
+  }
+  #price-page .select-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #price-page .pc-none {
+    display: block;
+  }
+  #price-page .season-select {
+    font-size: 1rem;
+  }
+  #price-page .season-legend {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  #price-page .season-calendar .section-title {
+    font-size: 1.3rem;
+  }
+  #price-page .table .info-table-2 {
+    font-size: 0.8rem;
+    margin-bottom: 60px;
+  }
+  #price-page .table-title .type,
+  #price-page .table-title .text-time {
+    width: auto;
+    font-size: 1rem;
+  }
   #price-page .contact-form .btn {
     font-size: 1rem;
     line-height: 40px;
   }
+  #price-page .calendar-flex {
+    gap: 20px;
+  }
+
+  #price-page .month-block {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  #price-page .season-calendar-month th,
+  #price-page .season-calendar-month td {
+    font-size: 0.75rem;
+    padding: 4px;
+  }
+
+
 
   /*-------------------------------------------
   [SP]privacy-page

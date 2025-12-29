@@ -83,20 +83,19 @@ $(function () {
   スムーススクロール
   ===================================================*/
   $('a[href^="#"]').click(function () {
-    // スクロールの速度
-    let speed = 1500;
-    // スクロールタイプ
-    let type = 'swing';
-    // href属性の取得
-    let href = $(this).attr("href");
-    // 移動先の取得（hrefが#indexならトップ$(html)に、）
-    let target = $(href == "#index" ? 'html' : href);
-    // 移動先のポジション取得
-    let position = target.offset().top;
-    // animateでスムーススクロール
-    $('body,html').animate({ scrollTop: position }, speed, type);
-    return false;
-  });
+  let speed = 1500;
+  let type = 'swing';
+  let href = $(this).attr("href");
+  let target = $(href == "#index" ? 'html' : href);
+
+  if (!target.length) return false;
+
+  let headerHeight = 100; // ← ヘッダー高さ
+  let position = target.offset().top - headerHeight;
+
+  $('body,html').animate({ scrollTop: position }, speed, type);
+  return false;
+});
 });
 
 /*=================================================
@@ -142,43 +141,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const select  = document.querySelector('.season-select');
-  const current = document.querySelector('.season-current');
-  const options = document.querySelectorAll('.season-options button');
-  const prices  = document.querySelectorAll('.price');
+  const seasonSelects = document.querySelectorAll('.season-select');
+  const prices = document.querySelectorAll('.price');
 
-  /* 開閉 */
-  current.addEventListener('click', (e) => {
-    e.stopPropagation();
-    select.classList.toggle('open');
-  });
+  seasonSelects.forEach(select => {
 
-  /* 選択 */
-  options.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    const currentBtn = select.querySelector('.season-current');
+    const options = select.querySelector('.season-options');
+    const optionButtons = options.querySelectorAll('button');
+
+    /* ===== 開閉 ===== */
+    currentBtn.addEventListener('click', e => {
       e.stopPropagation();
 
-      const season = btn.dataset.season;
-
-      // 表示切替
-      current.querySelector('.label').textContent = btn.textContent;
-      current.className = `season-current ${season} active`;
-
-      // 価格切替
-      prices.forEach(cell => {
-        const value = cell.dataset[season];
-        if (!value) return;
-        cell.textContent = Number(value).toLocaleString() + '円';
+      // 他を閉じる
+      seasonSelects.forEach(s => {
+        if (s !== select) s.classList.remove('open');
       });
 
-      // 閉じる（アニメーション付き）
-      select.classList.remove('open');
+      select.classList.toggle('open');
     });
+
+    /* ===== 選択 ===== */
+    optionButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+
+        const season = btn.dataset.season;
+
+        // 表示テキスト変更
+        currentBtn.querySelector('.label').textContent = btn.textContent;
+
+        // クラス切替
+        currentBtn.className = 'season-current active ' + season;
+
+        // 閉じる
+        select.classList.remove('open');
+
+        // 価格切替（全テーブル共通）
+        prices.forEach(cell => {
+          const value = cell.dataset[season];
+
+          // 値がない・空・空白の場合
+          if (!value || value.trim() === '') {
+            cell.textContent = '—';
+            return;
+          }
+
+          cell.textContent = Number(value).toLocaleString() + ' 円';
+        });
+
+      });
+    });
+
   });
 
-  /* 外側クリックで閉じる */
+  /* ===== 外側クリックで閉じる ===== */
   document.addEventListener('click', () => {
-    select.classList.remove('open');
+    seasonSelects.forEach(select => select.classList.remove('open'));
   });
 
 });

@@ -3591,6 +3591,9 @@ SP
     font-size: 0.8rem;
     margin-bottom: 60px;
   }
+  #price-page .table .info-table-2 th, #price-page .table .info-table-2 td {
+    padding: 3px 5px;
+  }
   #price-page .table-title .type,
   #price-page .table-title .text-time {
     width: auto;

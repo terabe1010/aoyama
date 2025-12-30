@@ -1869,12 +1869,51 @@ facility-page
   width: 100%;
   height: 600px;
 }
+#facility-page #dogrun {
+  margin-bottom: 80px;
+  background-color: #EBEBEB;
+  padding: 40px 0;
+}
+#facility-page #dogrun .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+#facility-page #dogrun .flex .img {
+  width: 48%;
+  height: 550px;
+  overflow: hidden;
+}
+#facility-page #dogrun .flex .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#facility-page #dogrun .flex .text {
+  width: 48%;
+}
+#facility-page #dogrun .dogrun-img {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1%;
+  height: 300px;
+}
+#facility-page #dogrun .dogrun-img .img {
+  overflow: hidden;
+}
+#facility-page #dogrun .dogrun-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 #facility-page #tent-site {
   margin-bottom: 80px;
 }
 #facility-page #tent-site .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 50px;
 }
 #facility-page #tent-site .flex .img,
@@ -3685,9 +3724,24 @@ SP
   }
   #facility-page .br-sp {
     display: none;
-  } 
-  #facility-page #tent-site .flex {
+  }
+  #facility-page #dogrun .flex {
     flex-direction: column;
+    margin-bottom: 50px;
+  }
+  #facility-page #dogrun .flex .img {
+    margin-bottom: 30px;
+  }
+  #facility-page #dogrun .flex .img,
+  #facility-page #dogrun .flex .text {
+    width: 100%;
+  }
+  #facility-page #dogrun .dogrun-img {
+    grid-template-columns: repeat(2, 1fr); 
+    height: 450px;
+  }
+  #facility-page #tent-site .flex {
+    flex-direction: column-reverse;
     align-items: center;
   }
   #facility-page #tent-site .flex .img,

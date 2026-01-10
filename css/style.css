@@ -1857,7 +1857,6 @@ facility-page
   display: inline-block;
   font-size: 1.3rem;
 }
-
 #facility-page #facility-map .map {
   text-align: center;
   margin-bottom: 80px;
@@ -1939,7 +1938,7 @@ facility-page
   text-align: center;
 }
 #facility-page #autocamp-site .list .item .text {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 #facility-page #autocamp-site .link.gray .btn {
   background-color: #EBEBEB;
@@ -1947,7 +1946,6 @@ facility-page
 #facility-page #autocamp-site .link.gray .btn:hover {
   background-color: #137180;
 }
-
 #facility-page #bungalow {
   margin-bottom: 70px;
 }
@@ -2577,7 +2575,6 @@ campsite
   margin: 50px 0 100px;
 }
 
-
 /*-------------------------------------------
 TB
 -------------------------------------------*/
@@ -2662,35 +2659,6 @@ TB
     width: 35px;
     background: #00a3d2;
   }
-  /* #header .hamburger span {
-    width: 35px;
-    height: 2px;
-    border-radius: 4px;
-    background-color: #fff;
-    position: absolute;
-    left: 12px;
-    transition: 0.5s;
-  }
-  #header .hamburger span:nth-child(1) {
-    top: 19px;
-  }
-  #header .hamburger span:nth-child(2) {
-    top: 30px;
-  }
-  #header .hamburger span:nth-child(3) {
-    bottom: 17px;
-  }
-  #header.open .hamburger span:nth-child(1) {
-    transform: translateY(11px) rotate(-315deg);
-    background-color: #00a3d2;
-  }
-  #header.open .hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-  #header.open .hamburger span:nth-child(3) {
-    transform: translateY(-11px) rotate(315deg);
-    background-color: #00a3d2;
-  } */
   #menu-sp {
     display: block;
     width: 250px;
@@ -2805,6 +2773,7 @@ TB
     width: 75%;
     padding: 5px;
   }
+
   /* --------------------------------
   [TB]appeal
   -------------------------------- */
@@ -2826,7 +2795,6 @@ TB
   #link .living {
     height: 500px;
   }
-
   #link .play .btn,
   #link .living .btn {
     top: 50%;
@@ -2846,10 +2814,6 @@ TB
     font-size: 1rem;
     padding: 0 16px;
   }
-
-  /* --------------------------------
-  [TB]access
-  -------------------------------- */
 
   /* --------------------------------
   [TB]footer
@@ -2951,8 +2915,8 @@ TB
     width: 100%;
   }
   #price-page .month-block {
-      margin-bottom: 40px;
-      width: 48%;
+    margin-bottom: 40px;
+    width: 48%;
   }
   /*-------------------------------------------
   [TB]facility-page
@@ -3154,7 +3118,6 @@ SP
     color: #137180;
     filter: drop-shadow(0px 0px 0px #fff);
   }
-
   #mainvisual-video .youtube-live {
     bottom: 5%;
     /* right: 50px; */
@@ -3169,7 +3132,6 @@ SP
   #mainvisual-video .youtube-live .youtube-video {
     max-width: 200px;
   }
-
 
   /* --------------------------------
   [SP]youtube
@@ -3655,8 +3617,6 @@ SP
     font-size: 0.75rem;
     padding: 4px;
   }
-
-
 
   /*-------------------------------------------
   [SP]privacy-page

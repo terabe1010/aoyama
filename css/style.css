@@ -445,6 +445,18 @@ information
   width: 100%;
   height: 540px;
 }
+#information .flex .box .content .insta-img {
+  overflow: hidden;
+}
+#information .flex .box .content .insta-img .slider {
+  max-width: 100%;
+  overflow: hidden;
+}
+#information .flex .box .content .insta-img .slider li {
+  width: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+}
 #information .flex .box .content {
   padding: 12px 12px;
   background-color: #fff;
@@ -2757,9 +2769,19 @@ TB
   /* --------------------------------
   [TB]information
   -------------------------------- */
-  /* #information .flex .box {
-    height: 520px;
-  } */
+  #information .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  #information .flex .info,
+  #information .flex .contact {
+    width: 100%;
+    text-align: center;
+  }
+  #information .flex .box .content .slider .img img {
+    object-position: center;
+    height: 600px;
+  }
   #information .flex .box.facebook iframe{
     width: 400px;
   }
@@ -3156,15 +3178,6 @@ SP
   #information .sp-wrapper {
     padding: 0;
   }
-  #information .flex {
-    flex-direction: column;
-    align-items: center;
-  }
-  #information .flex .info,
-  #information .flex .contact {
-    width: 100%;
-    text-align: center;
-  }
   #information .flex .title {
     font-size: 1rem;
   }
@@ -3328,7 +3341,6 @@ SP
   }
   #footer .copyright {
     font-size: 0.9rem;
-    margin-bottom: 30px;
   }
 
   /* --------------------------------
